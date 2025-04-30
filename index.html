@@ -51,6 +51,12 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        .section-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #003a75;
+        }
         .section {
             background-color: white;
             padding: 25px;
@@ -58,20 +64,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             transition: transform 0.3s;
+            display: inline-block;
+            width: 48%;
+            margin-right: 4%;
+            vertical-align: top;
         }
         .section:hover {
             transform: translateY(-5px);
-        }
-        .section-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #003a75;
-        }
-        .section-description {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            line-height: 1.6;
         }
         .cta-link {
             color: #004e92;
@@ -86,23 +85,6 @@
             color: #00275a;
             border-color: #00275a;
         }
-        .links-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .links-list li {
-            margin: 10px 0;
-        }
-        .links-list a {
-            font-size: 1.2em;
-            color: #004e92;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .links-list a:hover {
-            color: #00275a;
-            border-bottom: 2px solid #004e92;
-        }
         footer {
             background-color: #004e92;
             color: white;
@@ -112,60 +94,52 @@
             border-top-right-radius: 20px;
             margin-top: 40px;
         }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Uniklinik Köln - Station 10.1 Standardarbeitsanweisungen und Ressourcen</h1>
+        <h1>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</h1>
     </header>
 
     <nav>
         <a href="#sops">Standardarbeitsanweisungen</a>
         <a href="#downloads">Downloadbare Ressourcen</a>
-        <a href="#contact">Kontakt</a>
     </nav>
 
     <div class="content">
-        <section id="sops" class="section">
+        <!-- Standardarbeitsanweisungen Section -->
+        <div id="sops" class="section">
             <div class="section-title">Standardarbeitsanweisungen</div>
-            <div class="section-description">
-                In diesem Abschnitt finden Sie alle relevanten Standardarbeitsanweisungen (SOPs) für das Personal der Station 10.1 der Uniklinik Köln. Diese Dokumente sind entscheidend für die Aufrechterhaltung hoher Pflege- und Sicherheitsstandards.
-            </div>
-            <ul class="links-list">
-                <li><a href="sop1.html">SOP 1 - Richtlinie zur Patientenaufnahme</a></li>
-                <li><a href="sop2.html">SOP 2 - Notfallmanagement</a></li>
-                <li><a href="sop3.html">SOP 3 - Hygieneverfahren</a></li>
-                <li><a href="sop4.html">SOP 4 - Medikamentenverwaltung</a></li>
-                <li><a href="sop5.html">SOP 5 - Dokumentation und Berichterstattung</a></li>
+            <ul>
+                <li><a href="sop1.html" class="cta-link">SOP 1: Patientenaufnahme</a></li>
+                <li><a href="sop2.html" class="cta-link">SOP 2: Notfallmanagement</a></li>
+                <li><a href="sop3.html" class="cta-link">SOP 3: Medikamentenverwaltung</a></li>
+                <li><a href="sop4.html" class="cta-link">SOP 4: Hygienerichtlinien</a></li>
             </ul>
-        </section>
+        </div>
 
-        <section id="downloads" class="section">
+        <!-- Downloadbare Ressourcen Section -->
+        <div id="downloads" class="section">
             <div class="section-title">Downloadbare Ressourcen</div>
-            <div class="section-description">
-                Hier finden Sie wichtige Dateien und Ressourcen, die Sie herunterladen können. Diese Dateien beinhalten Formulare, Richtlinien und weitere Referenzmaterialien für das Personal der Station.
-            </div>
-            <ul class="links-list">
-                <li><a href="download1.pdf">Formular für Patientenanfragen</a></li>
-                <li><a href="download2.pdf">Richtlinie zur Medikamentenabgabe</a></li>
-                <li><a href="download3.pdf">Notfallprotokoll</a></li>
-                <li><a href="download4.pdf">Täglicher Pflegebericht</a></li>
-                <li><a href="download5.pdf">Mitarbeiterhandbuch</a></li>
+            <ul>
+                <li><a href="resource1.pdf" class="cta-link">Formular 1: Patientenaufklärung</a></li>
+                <li><a href="resource2.pdf" class="cta-link">Formular 2: Medikamentenplan</a></li>
+                <li><a href="resource3.pdf" class="cta-link">Richtlinie 1: Pflegeprozesse</a></li>
+                <li><a href="resource4.pdf" class="cta-link">Richtlinie 2: Sicherheitsvorkehrungen</a></li>
             </ul>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="section-title">Kontakt</div>
-            <div class="section-description">
-                Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie sich gerne an die Verwaltung wenden. Wir stehen Ihnen jederzeit zur Verfügung.
-            </div>
-            <a href="contact.html" class="cta-link">Kontakt aufnehmen</a>
-        </section>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Uniklinik Köln - Station 10.1</p>
+        <p>Version 1.0</p>
     </footer>
 
 </body>
