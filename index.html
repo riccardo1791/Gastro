@@ -1,106 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Ward Documentation Formatter</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    .section {
-      margin-bottom: 1.5rem;
-    }
-    .option {
-      display: inline-block;
-      margin: 0.25rem;
-      padding: 0.4rem 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #f9f9f9;
-    }
-    .option.selected {
-      background-color: #d0f0d0;
-      border-color: #4CAF50;
-    }
-    #output {
-      white-space: pre-wrap;
-      background: #f4f4f4;
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 6px;
-    }
-    #copyBtn {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      font-weight: bold;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniklinik Köln Ward 10.1 - SOPs and Resources</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #004e92; /* Uniklinik Köln color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            text-align: center;
+            background-color: #003a75; /* Slightly darker Uniklinik Köln color */
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #003a75;
+        }
+        .section-description {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #004e92;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Smart Ward Documentation</h2>
+    <header>
+        <h1>Uniklinik Köln - Ward 10.1 SOPs and Resources</h1>
+    </header>
 
-<div class="section">
-  <strong>Allgemeinzustand:</strong><br>
-  <span class="option" data-text="wach, orientiert">wach, orientiert</span>
-  <span class="option" data-text="somnolent, desorientiert">somnolent, desorientiert</span>
-</div>
+    <nav>
+        <a href="#sops">SOPs</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<div class="section">
-  <strong>Atmung:</strong><br>
-  <span class="option" data-text="spontan atmend, unauffällig">spontan atmend, unauffällig</span>
-  <span class="option" data-text="tachypnoisch bei AF 28/min">tachypnoisch bei AF 28/min</span>
-</div>
+    <div class="content">
+        <section id="sops">
+            <div class="section-title">Standard Operating Procedures (SOPs)</div>
+            <div class="section-description">
+                This section contains all the Standard Operating Procedures (SOPs) relevant to the staff of Ward 10.1 at Uniklinik Köln. These documents are essential for ensuring high standards of care and patient safety. Click below to access the SOPs.
+            </div>
+            <a href="sops.html" style="color: #004e92; font-size: 1.2em;">View SOPs</a>
+        </section>
 
-<div class="section">
-  <strong>Kreislauf:</strong><br>
-  <span class="option" data-text="RR stabil, HF 70/min">RR stabil, HF 70/min</span>
-  <span class="option" data-text="hypoton bei RR 85/50 mmHg">hypoton bei RR 85/50 mmHg</span>
-</div>
+        <section id="downloads">
+            <div class="section-title">Downloadable Resources</div>
+            <div class="section-description">
+                Here you can find important files and resources that are available for download. These files may include forms, guidelines, and additional reference materials for the ward staff.
+            </div>
+            <a href="downloads.html" style="color: #004e92; font-size: 1.2em;">View Downloads</a>
+        </section>
 
-<h3>Vorschau:</h3>
-<div id="output">(noch nichts ausgewählt)</div>
-<button id="copyBtn">In Zwischenablage kopieren</button>
+        <section id="contact">
+            <div class="section-title">Contact</div>
+            <div class="section-description">
+                If you have any questions or need support, please feel free to contact the administration. We are here to help you.
+            </div>
+            <a href="contact.html" style="color: #004e92; font-size: 1.2em;">Contact Us</a>
+        </section>
+    </div>
 
-<script>
-  const options = document.querySelectorAll('.option');
-  const output = document.getElementById('output');
-  const copyBtn = document.getElementById('copyBtn');
-  const selections = {};
-
-  options.forEach(opt => {
-    opt.addEventListener('click', () => {
-      const parent = opt.parentElement;
-      const section = parent.querySelector('strong').textContent;
-      // Deselect others in the same section
-      parent.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
-      opt.classList.add('selected');
-      selections[section] = opt.dataset.text;
-      updateOutput();
-    });
-  });
-
-  function updateOutput() {
-    const lines = Object.entries(selections).map(([key, value]) => `⚫ ${key} ${value}`);
-    output.textContent = lines.join('\n') || '(noch nichts ausgewählt)';
-  }
-
-  copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(output.textContent).then(() => {
-      copyBtn.textContent = '✓ Kopiert!';
-      setTimeout(() => copyBtn.textContent = 'In Zwischenablage kopieren', 2000);
-    });
-  });
-</script>
+    <footer>
+        <p>&copy; 2025 Uniklinik Köln - Ward 10.1</p>
+    </footer>
 
 </body>
 </html>
