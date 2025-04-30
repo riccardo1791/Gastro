@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Ward Documentation Formatter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .section {
+      margin-bottom: 1.5rem;
+    }
+    .option {
+      display: inline-block;
+      margin: 0.25rem;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #f9f9f9;
+    }
+    .option.selected {
+      background-color: #d0f0d0;
+      border-color: #4CAF50;
+    }
+    #output {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    #copyBtn {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-weight: bold;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Smart Ward Documentation</h2>
+
+<div class="section">
+  <strong>Allgemeinzustand:</strong><br>
+  <span class="option" data-text="wach, orientiert">wach, orientiert</span>
+  <span class="option" data-text="somnolent, desorientiert">somnolent, desorientiert</span>
+</div>
+
+<div class="section">
+  <strong>Atmung:</strong><br>
+  <span class="option" data-text="spontan atmend, unauffällig">spontan atmend, unauffällig</span>
+  <span class="option" data-text="tachypnoisch bei AF 28/min">tachypnoisch bei AF 28/min</span>
+</div>
+
+<div class="section">
+  <strong>Kreislauf:</strong><br>
+  <span class="option" data-text="RR stabil, HF 70/min">RR stabil, HF 70/min</span>
+  <span class="option" data-text="hypoton bei RR 85/50 mmHg">hypoton bei RR 85/50 mmHg</span>
+</div>
+
+<h3>Vorschau:</h3>
+<div id="output">(noch nichts ausgewählt)</div>
+<button id="copyBtn">In Zwischenablage kopieren</button>
+
+<script>
+  const options = document.querySelectorAll('.option');
+  const output = document.getElementById('output');
+  const copyBtn = document.getElementById('copyBtn');
+  const selections = {};
+
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const parent = opt.parentElement;
+      const section = parent.querySelector('strong').textContent;
+      // Deselect others in the same section
+      parent.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      selections[section] = opt.dataset.text;
+      updateOutput();
+    });
+  });
+
+  function updateOutput() {
+    const lines = Object.entries(selections).map(([key, value]) => `⚫ ${key} ${value}`);
+    output.textContent = lines.join('\n') || '(noch nichts ausgewählt)';
+  }
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.textContent).then(() => {
+      copyBtn.textContent = '✓ Kopiert!';
+      setTimeout(() => copyBtn.textContent = 'In Zwischenablage kopieren', 2000);
+    });
+  });
+</script>
+
+</body>
+</html>
