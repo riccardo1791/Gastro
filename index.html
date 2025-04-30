@@ -3,122 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SOPs and resources for Uniklinik Köln Station 10.1">
     <title>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</title>
     <style>
         /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
         }
+        body {
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
         header {
-            background-color: #004e92; /* Uniklinik Köln color */
+            background: linear-gradient(180deg, #004e92 0%, #003a75 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: bold;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-        nav {
-            text-align: center;
-            background-color: #003a75; /* Slightly darker Uniklinik Köln color */
-            padding: 15px;
-            border-radius: 15px;
-            margin-top: -15px;
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 500;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #00275a;
-        }
+
+        /* Content */
         .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .section-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #003a75;
-        }
-        /* Container for Sections */
         .sections-container {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 30px;
+            flex-wrap: nowrap;
         }
         .section {
-            background-color: white;
-            padding: 25px;
+            background: white;
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 48%;
-            transition: transform 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            width: 50%;
+            min-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease-in-out;
         }
         .section:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #003a75;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #004e92;
+            border-radius: 2px;
+        }
+
+        /* CTA Links */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
         }
         .cta-link {
             color: #004e92;
-            font-size: 1.3em;
+            font-size: 1.2em;
+            font-weight: 500;
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid #004e92;
-            padding-bottom: 5px;
-            transition: all 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        .cta-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00275a;
+            transition: width 0.3s ease;
+        }
+        .cta-link:hover::after {
+            width: 100%;
         }
         .cta-link:hover {
             color: #00275a;
-            border-color: #00275a;
         }
+        .cta-link:focus {
+            outline: 2px solid #004e92;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Footer */
         footer {
-            background-color: #004e92;
+            background: linear-gradient(180deg, #003a75 0%, #004e92 100%);
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            margin-top: 40px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            margin-top: 60px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
         }
+        footer p {
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .sections-container {
+                flex-direction: column;
+                gap: 20px;
+            }
             .section {
                 width: 100%;
             }
-        }
-        ul {
-            padding-left: 20px;
-            font-size: 1.1em;
+            header h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</h1>
     </header>
-
-    <nav>
-        <a href="#sops">Standardarbeitsanweisungen</a>
-        <a href="#downloads">Downloadbare Ressourcen</a>
-    </nav>
 
     <div class="content">
         <div class="sections-container">
@@ -147,8 +191,7 @@
     </div>
 
     <footer>
-        <p>Version 1.0</p>
+        <p>Version 1.0 | &copy; Uniklinik Köln</p>
     </footer>
-
 </body>
 </html>
