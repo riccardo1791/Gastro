@@ -1,104 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uniklinik Köln Ward 10.1 - SOPs and Resources</title>
+    <title>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</title>
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            color: #333;
         }
         header {
             background-color: #004e92; /* Uniklinik Köln color */
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
         }
         nav {
             text-align: center;
             background-color: #003a75; /* Slightly darker Uniklinik Köln color */
-            padding: 10px;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: -15px;
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            background-color: #00275a;
         }
         .content {
-            padding: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .section-title {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
             color: #003a75;
         }
         .section-description {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        .cta-link {
+            color: #004e92;
+            font-size: 1.3em;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #004e92;
+            padding-bottom: 5px;
+            transition: all 0.3s;
+        }
+        .cta-link:hover {
+            color: #00275a;
+            border-color: #00275a;
         }
         footer {
             background-color: #004e92;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Uniklinik Köln - Ward 10.1 SOPs and Resources</h1>
+        <h1>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</h1>
     </header>
 
     <nav>
         <a href="#sops">SOPs</a>
         <a href="#downloads">Downloads</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Kontakt</a>
     </nav>
 
     <div class="content">
-        <section id="sops">
-            <div class="section-title">Standard Operating Procedures (SOPs)</div>
+        <section id="sops" class="section">
+            <div class="section-title">Standardarbeitsanweisungen (SOPs)</div>
             <div class="section-description">
-                This section contains all the Standard Operating Procedures (SOPs) relevant to the staff of Ward 10.1 at Uniklinik Köln. These documents are essential for ensuring high standards of care and patient safety. Click below to access the SOPs.
+                In diesem Abschnitt finden Sie alle relevanten Standardarbeitsanweisungen (SOPs) für das Personal der Station 10.1 der Uniklinik Köln. Diese Dokumente sind entscheidend für die Aufrechterhaltung hoher Pflege- und Sicherheitsstandards. Klicken Sie unten, um die SOPs einzusehen.
             </div>
-            <a href="sops.html" style="color: #004e92; font-size: 1.2em;">View SOPs</a>
+            <a href="sops.html" class="cta-link">SOPs anzeigen</a>
         </section>
 
-        <section id="downloads">
-            <div class="section-title">Downloadable Resources</div>
+        <section id="downloads" class="section">
+            <div class="section-title">Downloadbare Ressourcen</div>
             <div class="section-description">
-                Here you can find important files and resources that are available for download. These files may include forms, guidelines, and additional reference materials for the ward staff.
+                Hier finden Sie wichtige Dateien und Ressourcen, die Sie herunterladen können. Diese Dateien beinhalten Formulare, Richtlinien und weitere Referenzmaterialien für das Personal der Station.
             </div>
-            <a href="downloads.html" style="color: #004e92; font-size: 1.2em;">View Downloads</a>
+            <a href="downloads.html" class="cta-link">Ressourcen herunterladen</a>
         </section>
 
-        <section id="contact">
-            <div class="section-title">Contact</div>
+        <section id="contact" class="section">
+            <div class="section-title">Kontakt</div>
             <div class="section-description">
-                If you have any questions or need support, please feel free to contact the administration. We are here to help you.
+                Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie sich gerne an die Verwaltung wenden. Wir stehen Ihnen jederzeit zur Verfügung.
             </div>
-            <a href="contact.html" style="color: #004e92; font-size: 1.2em;">Contact Us</a>
+            <a href="contact.html" class="cta-link">Kontakt aufnehmen</a>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Uniklinik Köln - Ward 10.1</p>
+        <p>&copy; 2025 Uniklinik Köln - Station 10.1</p>
     </footer>
 
 </body>
