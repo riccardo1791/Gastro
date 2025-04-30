@@ -57,17 +57,20 @@
             margin-bottom: 15px;
             color: #003a75;
         }
+        /* Container for Sections */
+        .sections-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
         .section {
             background-color: white;
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-            display: inline-block;
             width: 48%;
-            margin-right: 4%;
-            vertical-align: top;
+            transition: transform 0.3s;
         }
         .section:hover {
             transform: translateY(-5px);
@@ -98,8 +101,11 @@
         @media (max-width: 768px) {
             .section {
                 width: 100%;
-                margin-right: 0;
             }
+        }
+        ul {
+            padding-left: 20px;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -115,26 +121,28 @@
     </nav>
 
     <div class="content">
-        <!-- Standardarbeitsanweisungen Section -->
-        <div id="sops" class="section">
-            <div class="section-title">Standardarbeitsanweisungen</div>
-            <ul>
-                <li><a href="sop1.html" class="cta-link">SOP 1: Patientenaufnahme</a></li>
-                <li><a href="sop2.html" class="cta-link">SOP 2: Notfallmanagement</a></li>
-                <li><a href="sop3.html" class="cta-link">SOP 3: Medikamentenverwaltung</a></li>
-                <li><a href="sop4.html" class="cta-link">SOP 4: Hygienerichtlinien</a></li>
-            </ul>
-        </div>
+        <div class="sections-container">
+            <!-- Standardarbeitsanweisungen Section -->
+            <div id="sops" class="section">
+                <div class="section-title">Standardarbeitsanweisungen</div>
+                <ul>
+                    <li><a href="sop1.html" class="cta-link">SOP 1: Patientenaufnahme</a></li>
+                    <li><a href="sop2.html" class="cta-link">SOP 2: Notfallmanagement</a></li>
+                    <li><a href="sop3.html" class="cta-link">SOP 3: Medikamentenverwaltung</a></li>
+                    <li><a href="sop4.html" class="cta-link">SOP 4: Hygienerichtlinien</a></li>
+                </ul>
+            </div>
 
-        <!-- Downloadbare Ressourcen Section -->
-        <div id="downloads" class="section">
-            <div class="section-title">Downloadbare Ressourcen</div>
-            <ul>
-                <li><a href="resource1.pdf" class="cta-link">Formular 1: Patientenaufklärung</a></li>
-                <li><a href="resource2.pdf" class="cta-link">Formular 2: Medikamentenplan</a></li>
-                <li><a href="resource3.pdf" class="cta-link">Richtlinie 1: Pflegeprozesse</a></li>
-                <li><a href="resource4.pdf" class="cta-link">Richtlinie 2: Sicherheitsvorkehrungen</a></li>
-            </ul>
+            <!-- Downloadbare Ressourcen Section -->
+            <div id="downloads" class="section">
+                <div class="section-title">Downloadbare Ressourcen</div>
+                <ul>
+                    <li><a href="resource1.pdf" class="cta-link">Formular 1: Patientenaufklärung</a></li>
+                    <li><a href="resource2.pdf" class="cta-link">Formular 2: Medikamentenplan</a></li>
+                    <li><a href="resource3.pdf" class="cta-link">Richtlinie 1: Pflegeprozesse</a></li>
+                    <li><a href="resource4.pdf" class="cta-link">Richtlinie 2: Sicherheitsvorkehrungen</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
