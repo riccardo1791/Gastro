@@ -51,17 +51,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .section-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #003a75;
-        }
-        .section-description {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
         .section {
             background-color: white;
             padding: 25px;
@@ -72,6 +61,17 @@
         }
         .section:hover {
             transform: translateY(-5px);
+        }
+        .section-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #003a75;
+        }
+        .section-description {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
         .cta-link {
             color: #004e92;
@@ -85,6 +85,23 @@
         .cta-link:hover {
             color: #00275a;
             border-color: #00275a;
+        }
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .links-list li {
+            margin: 10px 0;
+        }
+        .links-list a {
+            font-size: 1.2em;
+            color: #004e92;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .links-list a:hover {
+            color: #00275a;
+            border-bottom: 2px solid #004e92;
         }
         footer {
             background-color: #004e92;
@@ -100,22 +117,28 @@
 <body>
 
     <header>
-        <h1>Uniklinik Köln - Station 10.1 SOPs und Ressourcen</h1>
+        <h1>Uniklinik Köln - Station 10.1 Standardarbeitsanweisungen und Ressourcen</h1>
     </header>
 
     <nav>
-        <a href="#sops">SOPs</a>
-        <a href="#downloads">Downloads</a>
+        <a href="#sops">Standardarbeitsanweisungen</a>
+        <a href="#downloads">Downloadbare Ressourcen</a>
         <a href="#contact">Kontakt</a>
     </nav>
 
     <div class="content">
         <section id="sops" class="section">
-            <div class="section-title">Standardarbeitsanweisungen (SOPs)</div>
+            <div class="section-title">Standardarbeitsanweisungen</div>
             <div class="section-description">
-                In diesem Abschnitt finden Sie alle relevanten Standardarbeitsanweisungen (SOPs) für das Personal der Station 10.1 der Uniklinik Köln. Diese Dokumente sind entscheidend für die Aufrechterhaltung hoher Pflege- und Sicherheitsstandards. Klicken Sie unten, um die SOPs einzusehen.
+                In diesem Abschnitt finden Sie alle relevanten Standardarbeitsanweisungen (SOPs) für das Personal der Station 10.1 der Uniklinik Köln. Diese Dokumente sind entscheidend für die Aufrechterhaltung hoher Pflege- und Sicherheitsstandards.
             </div>
-            <a href="sops.html" class="cta-link">SOPs anzeigen</a>
+            <ul class="links-list">
+                <li><a href="sop1.html">SOP 1 - Richtlinie zur Patientenaufnahme</a></li>
+                <li><a href="sop2.html">SOP 2 - Notfallmanagement</a></li>
+                <li><a href="sop3.html">SOP 3 - Hygieneverfahren</a></li>
+                <li><a href="sop4.html">SOP 4 - Medikamentenverwaltung</a></li>
+                <li><a href="sop5.html">SOP 5 - Dokumentation und Berichterstattung</a></li>
+            </ul>
         </section>
 
         <section id="downloads" class="section">
@@ -123,7 +146,13 @@
             <div class="section-description">
                 Hier finden Sie wichtige Dateien und Ressourcen, die Sie herunterladen können. Diese Dateien beinhalten Formulare, Richtlinien und weitere Referenzmaterialien für das Personal der Station.
             </div>
-            <a href="downloads.html" class="cta-link">Ressourcen herunterladen</a>
+            <ul class="links-list">
+                <li><a href="download1.pdf">Formular für Patientenanfragen</a></li>
+                <li><a href="download2.pdf">Richtlinie zur Medikamentenabgabe</a></li>
+                <li><a href="download3.pdf">Notfallprotokoll</a></li>
+                <li><a href="download4.pdf">Täglicher Pflegebericht</a></li>
+                <li><a href="download5.pdf">Mitarbeiterhandbuch</a></li>
+            </ul>
         </section>
 
         <section id="contact" class="section">
